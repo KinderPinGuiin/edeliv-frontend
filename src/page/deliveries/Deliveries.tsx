@@ -6,7 +6,6 @@ import {
   GridColDef,
   GridFilterModel,
   GridPaginationModel,
-  GridSortModel,
 } from "@mui/x-data-grid";
 import { useState } from "react";
 import DeleteIcon from "@mui/icons-material/Delete";

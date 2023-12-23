@@ -75,7 +75,7 @@ export default function UpdateDeliveryTourForm({
             label: currentDeliveryTour.deliverer.name,
             id: currentDeliveryTour.deliverer.id,
           }}
-          onChange={(e, newValue) => setDeliverer(newValue)}
+          onChange={(_, newValue) => setDeliverer(newValue)}
         />
         <Button
           variant="contained"

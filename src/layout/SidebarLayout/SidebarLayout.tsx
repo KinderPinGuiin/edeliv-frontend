@@ -148,7 +148,7 @@ export default function SidebarLayout() {
             {bottomElements.length > 0 && (
               <Box>
                 <Divider />
-                {bottomElements}
+                {bottomElements as unknown as ReactNode[]}
               </Box>
             )}
           </Box>

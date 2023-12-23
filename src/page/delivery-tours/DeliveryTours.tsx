@@ -46,6 +46,7 @@ export default function DeliveryTours() {
         name: "",
         creationDate: dayjs().toDate(),
         isAvailable: false,
+        deliveryTours: [],
       },
       deliveries: [],
     });

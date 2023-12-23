@@ -71,7 +71,7 @@ export default function CreateDeliveryTourForm({
           }
           sx={{ margin: "10px 0" }}
           renderInput={(params) => <TextField {...params} label="Livreur" />}
-          onChange={(e, newValue) => setDeliverer(newValue)}
+          onChange={(_, newValue) => setDeliverer(newValue)}
         />
         <Button
           variant="contained"
