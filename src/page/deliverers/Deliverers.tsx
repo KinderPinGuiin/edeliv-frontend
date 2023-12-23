@@ -166,7 +166,7 @@ export default function Deliverers() {
     invalidateQueries: [JSON.stringify(searchModel)]
   })
   const createUser = (user: CreateDelivererRequestDTO) => {
-    mutateCreation(user);
+    mutateCreation({ data: user });
     setOpenDelivererCreate(false);
   }
   if (isCreationError) {
@@ -189,7 +189,7 @@ export default function Deliverers() {
     invalidateQueries: [JSON.stringify(searchModel)]
   })
   const updateUser = (user: UpdateDelivererRequestDTO) => {
-    mutateUpdate(user);
+    mutateUpdate({ data: user });
     setOpenDelivererUpdate(false);
   }
   if (isUpdateError) {
