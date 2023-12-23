@@ -29,6 +29,7 @@ import UpdateDelivererForm from "@component/Deliverer/UpdateDelivererForm/Update
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import DelivererResponseDTO from "@api/dto/response/deliverer/DelivererResponseDTO";
+import DeliveryTourResponseDTO from "@api/dto/response/delivery-tour/DeliveryTourResponseDTO";
 
 type DelivererSearchModel = {
   page: number;
@@ -55,6 +56,7 @@ export default function Deliverers() {
       name: "",
       isAvailable: true,
       creationDate: dayjs().toDate(),
+      deliveryTours: [],
     });
   const tableColumns: GridColDef[] = [
     {
@@ -78,6 +80,34 @@ export default function Deliverers() {
       flex: 1,
       type: "boolean",
       sortable: false,
+    },
+    {
+      field: "deliveryTours",
+      headerName: "Nombre de tournées",
+      flex: 1,
+      renderCell: (e) =>
+        (e.row.deliveryTours as DeliveryTourResponseDTO[]).reduce(
+          (acc) => acc + 1,
+          0
+        ),
+      align: "center",
+      headerAlign: "center",
+      sortable: false,
+      filterable: false,
+    },
+    {
+      field: "deliveryTours2",
+      headerName: "Nombre de livraisons",
+      flex: 1,
+      renderCell: (e) =>
+        (e.row.deliveryTours as DeliveryTourResponseDTO[]).reduce(
+          (acc, value) => acc + value.deliveries.length,
+          0
+        ),
+      align: "center",
+      headerAlign: "center",
+      sortable: false,
+      filterable: false,
     },
     {
       field: "actions",

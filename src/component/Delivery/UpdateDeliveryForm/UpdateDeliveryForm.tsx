@@ -20,9 +20,7 @@ export default function UpdateDeliveryForm({
   const deliveryTourRef = useRef<HTMLInputElement | null>(null);
 
   // Get the delivery tours
-  const { data: deliveryTours, isLoading } = useApi(
-    APIEndpoint.GET_ALL_DELIVERY
-  );
+  const { data: deliveryTours, isLoading } = useApi(APIEndpoint.GET_ALL_TOURS);
 
   return (
     <>
