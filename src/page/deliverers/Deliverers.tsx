@@ -247,7 +247,7 @@ export default function Deliverers() {
       >
         <CreateDelivererForm onSubmit={createUser} />
       </CenteredModal>
-      {/* Edit user modal */}
+      {/* Edit deliverer modal */}
       <CenteredModal 
         open={openDelivererUpdate} 
         handleClose={() => setOpenDelivererUpdate(false)} 
