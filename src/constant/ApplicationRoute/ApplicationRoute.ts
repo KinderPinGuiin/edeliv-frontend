@@ -4,4 +4,6 @@
 export enum ApplicationRoute {
   HOME = "/",
   DELIVERERS = "/deliverers",
+  DELIVERIES = "/deliveries",
+  TOURS = "/tours",
 }

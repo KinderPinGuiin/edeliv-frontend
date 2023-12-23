@@ -14,25 +14,27 @@ export default function Home() {
     navigate(ApplicationRoute.DELIVERERS);
   }, []);
 
-  const onLoginButtonClick = useCallback(() => {
-    navigate(ApplicationRoute.LOGIN);
-  }, []);
-
   return (
     <HomeWrapper>
       <TitleContainer>
         <ApplicationTitle>eDeliv</ApplicationTitle>
-        <ApplicationSubtitle>Plateforme de gestion de livraison</ApplicationSubtitle>
+        <ApplicationSubtitle>
+          Plateforme de gestion de livraison
+        </ApplicationSubtitle>
         <Box marginTop={5}>
-          <Button variant="contained" onClick={onAccessButtonClick} style={{ zIndex: "1", width: "45%", marginRight: "5px" }}>
+          <Button
+            variant="contained"
+            onClick={onAccessButtonClick}
+            style={{ zIndex: "1", width: "100%", marginRight: "5px" }}
+          >
             Accéder
-          </Button>
-          <Button variant="outlined" onClick={onLoginButtonClick} style={{ zIndex: "1", width: "45%" }}>
-            Se connecter
           </Button>
         </Box>
       </TitleContainer>
-      <SplashBackground src="https://picsum.photos/600" alt="Random test picture" />
+      <SplashBackground
+        src="https://picsum.photos/600"
+        alt="Random test picture"
+      />
     </HomeWrapper>
   );
 }
@@ -40,7 +42,7 @@ export default function Home() {
 const HomeWrapper = styled("div")(({ theme }) => ({
   position: "relative",
   height: "100vh",
-  background: theme.palette.background.default
+  background: theme.palette.background.default,
 }));
 
 const TitleContainer = styled("div")(() => ({
@@ -53,7 +55,7 @@ const TitleContainer = styled("div")(() => ({
 const commonTitleStyle = {
   zIndex: "1",
   margin: "0",
-  color: "black"
+  color: "black",
 };
 
 const ApplicationTitle = styled("h1")(() => ({
@@ -64,5 +66,5 @@ const ApplicationTitle = styled("h1")(() => ({
 const ApplicationSubtitle = styled("h3")(() => ({
   fontSize: "2rem",
   fontWeight: "normal",
-  ...commonTitleStyle
+  ...commonTitleStyle,
 }));

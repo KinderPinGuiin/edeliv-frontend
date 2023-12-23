@@ -1,6 +1,10 @@
 import CreateDelivererRequestDTO from "@api/dto/request/deliverer/CreateDelivererRequestDTO";
 import UpdateDelivererRequestDTO from "@api/dto/request/deliverer/UpdateDelivererRequestDTO";
+import CreateDeliveryRequestDTO from "@api/dto/request/delivery/CreateDeliveryRequestDTO";
+import UpdateDeliveryRequestDTO from "@api/dto/request/delivery/UpdateDeliveryRequestDTO";
 import DelivererResponseDTO from "@api/dto/response/deliverer/DelivererResponseDTO";
+import DeliveryTourResponseDTO from "@api/dto/response/delivery-tour/DeliveryTourResponseDTO";
+import DeliveryResponseDTO from "@api/dto/response/delivery/DeliveryResponseDTO";
 import SearchResultResponseDTO from "@api/dto/response/search/SearchResultResponseDTO";
 import { Class } from "@type/Class";
 
@@ -17,6 +21,14 @@ export default class APIEndpoint<T, U> {
   public static readonly CREATE_DELIVERER = new APIEndpoint("/deliverer/create", "POST", CreateDelivererRequestDTO, DelivererResponseDTO);
   public static readonly UPDATE_DELIVERER = new APIEndpoint("/deliverer/update", "POST", UpdateDelivererRequestDTO, DelivererResponseDTO);
   public static readonly DELETE_DELIVERER = new APIEndpoint("/deliverer/delete", "DELETE", null, DelivererResponseDTO);
+
+
+  public static readonly GET_ALL_DELIVERIES = new APIEndpoint("/delivery/get-all", "GET", null, SearchResultResponseDTO<DeliveryResponseDTO>);
+  public static readonly CREATE_DELIVERY = new APIEndpoint("/delivery/create", "POST", CreateDeliveryRequestDTO, DeliveryResponseDTO);
+  public static readonly UPDATE_DELIVERY = new APIEndpoint("/delivery/update", "POST", UpdateDeliveryRequestDTO, DeliveryResponseDTO);
+  public static readonly DELETE_DELIVERY = new APIEndpoint("/delivery/delete", "DELETE", null, DeliveryResponseDTO);
+
+  public static readonly GET_ALL_DELIVERY = new APIEndpoint("/delivery-tour/get-all", "GET", null, SearchResultResponseDTO<DeliveryTourResponseDTO>);
 
   /**
    * @param uri          The endpoint's URI.
