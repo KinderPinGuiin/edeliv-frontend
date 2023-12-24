@@ -12,7 +12,9 @@ import {
   useTheme,
 } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
-import PersonIcon from '@mui/icons-material/Person';
+import PersonIcon from "@mui/icons-material/Person";
+import InventoryIcon from "@mui/icons-material/Inventory";
+import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import { ReactNode, useMemo } from "react";
 import { ApplicationRoute } from "@constant/ApplicationRoute/ApplicationRoute";
 
@@ -68,6 +70,18 @@ export default function SidebarLayout() {
         href: ApplicationRoute.DELIVERERS,
         icon: <PersonIcon />,
         label: "Livreurs",
+      },
+      {
+        key: "delivery",
+        href: ApplicationRoute.DELIVERIES,
+        icon: <InventoryIcon />,
+        label: "Livraisons",
+      },
+      {
+        key: "delievery-tour",
+        href: ApplicationRoute.TOURS,
+        icon: <LocalShippingIcon />,
+        label: "Tournées",
       },
     ],
     []
@@ -131,10 +145,12 @@ export default function SidebarLayout() {
                 }
               })}
             </Box>
-            {bottomElements.length > 0 && <Box>
-              <Divider />
-              {bottomElements}
-            </Box>}
+            {bottomElements.length > 0 && (
+              <Box>
+                <Divider />
+                {bottomElements as unknown as ReactNode[]}
+              </Box>
+            )}
           </Box>
         </List>
       </Sidebar>
