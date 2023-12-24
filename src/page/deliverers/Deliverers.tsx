@@ -138,7 +138,7 @@ export default function Deliverers() {
     page: 0,
     pageSize: 10,
     minDate: dayjs("1970-01-01").toISOString(),
-    maxDate: dayjs("275760-09-13").toISOString(),
+    maxDate: dayjs().add(1, "day").toISOString(),
     isDelivererAvailable: null,
     nameSort: null,
     creationDateSort: null,
